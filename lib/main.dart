@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -11,6 +12,7 @@ import 'package:the_solomon_project/entities/convo_preview.dart';
 void main() {
   runApp(
     DevicePreview(
+      enabled: !kReleaseMode,
       builder: (context) => MultiProvider(
         providers: [
           BlocProvider(create: (context) => ConvoDetailBloc()),
